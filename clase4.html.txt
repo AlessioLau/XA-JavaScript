@@ -1,0 +1,9 @@
+
+<html>
+    <head>
+        <link href="clase4.css" rel="stylesheet"/>
+    </head>
+    <body>
+    </body>
+    <script src="clase4.js"></script>
+</html> 

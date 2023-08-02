@@ -1,0 +1,195 @@
+
+/* ARROW FUNCTIONS */
+
+//Forma tradicional
+function sumar(a, b) {
+  return a + b;
+}
+
+// //Function expression
+const sumar2 = function (a, b) {
+  return a + b;
+};
+
+// //Arrow function
+// const sumar3 = (a, b) => {
+   
+//   return a + b
+//   } ;
+
+
+// const sumar3 = (a, b) => {
+//   return a + b;
+// };
+
+// //1 Sola linea
+// const sumar4 = (a, b) => a + b;
+
+// //1 solo argumento
+// const saludar = nombre => {
+//   console.log("Hola " + nombre);
+// };
+
+// const saludar2 = (nombre) => {
+//     return ("Hola " + nombre);
+//   };
+
+// //String templating
+// //Forma normal
+// function saludar3(nombre, apellido, apodo) {
+//   console.log("Hola "  + nombre +     " " +     apellido + " "      + apodo +       ".");
+// }
+// //String templating
+// function saludar4(nombre, apellido, apodo) {
+//   console.log(`Hola ${nombre} ${apellido} ${apodo}`);
+// }
+
+//Invocaciones
+// console.log(sumar(3,5));
+// console.log(sumar2(3,5));
+// console.log(sumar3(3,5));
+// console.log(sumar4(3,5));
+
+// saludar("Jorge");
+
+//La función en si (su nombre) vs La llamadas
+// console.log(saludar2);
+// console.log(saludar2());
+
+/* FIN ARROW  */
+
+/* CALLBACKS*/
+
+// const saludar = (nombre, funcionCallback) => {
+//   //ejecuto todo mi codigo
+//   console.log("Hola " + nombre);     
+
+//   let mensaje = funcionCallback(10);
+//   console.log(mensaje);
+// };
+
+// function notifcarFinDeLlamado() {
+//   console.log("se terminó la ejecución");
+// }
+
+// function notifcarFinDeLlamado2(estado) {  
+//   return "se terminó la ejecución con estado " + estado;
+// }
+
+// // saludar("Jorge", notifcarFinDeLlamado);
+// saludar("Quentin", notifcarFinDeLlamado2);
+
+// // Invocación
+// saludar4("Jorge", notifcarFinDeLlamado);
+
+
+// function repararAuto(accionDespuesDeReparar){    
+
+//     //REPARAR AUTO
+//     console.log("Reparando auto...");    
+
+//     // HACER ALGO AL FINAL
+//     if (accionDespuesDeReparar === "calle" ){
+//         console.log("El auto ya está reparado y está en la calle");
+//     }
+//     if (accionDespuesDeReparar === "lavarlo" ){
+//         console.log("Lavando auto...");
+//         console.log("El auto ya está reparado y lavado");
+//     }
+//     if (accionDespuesDeReparar === "llamar"){
+//         console.log("El auto ya está reparado y se notifica al cliente...");
+//     }
+// }
+
+
+// // repararAuto("calle");
+
+// function repararAuto2(accionDespuesDeReparar){
+
+//   //REPARAR AUTO
+//   console.log("Reparando auto...");    
+//   accionDespuesDeReparar();  
+// }
+
+// //Invocacion
+// repararAuto2(dejarloEnLaCalle);
+// repararAuto2(lavar);
+
+// function dejarloEnLaCalle(){
+//   console.log("El auto ya está reparado y está en la calle");
+// }
+
+function lavar(){
+    console.log("Lavando auto...");
+    console.log("El auto ya está reparado y lavado");
+}
+
+function llamarCliente (){
+    console.log("El auto ya está reparado y se notifica al cliente...");    
+}
+
+
+// function repararAuto2(accionDespuesDeReparar){
+    
+
+//     //REPARAR AUTO
+//     console.log("Reparando auto...");    
+
+//     // HACER ALGO AL FINAL
+//     accionDespuesDeReparar();
+// }
+
+// // repararAuto2(dejarloEnLaCalle);
+// repararAuto2(lavar);
+
+/*FIN CALLBACKS */
+
+/* Uso de callback (find, map, etc)*/ 
+
+//find
+
+//  const colores = ["verde", "azul", "rojo", "verde"];
+
+const numeros = [1,2,4,5,1,33,4];
+
+
+function encontrarMayorOIgual (elemento){
+  console.log(elemento);
+  return elemento >= 10;
+}
+
+let encontrado =numeros.find(encontrarMayorOIgual);
+let encontrado2 =numeros.find((elemento => elemento >= 10));
+
+// console.log("Encontré el numero");
+// console.log(encontrado);
+
+// Usamos un operador de comparacion >
+function findMayor(numeros, numeroAComparar) {
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeroAComparar > numeros[i]) {
+      return numeros[i];
+    }
+  }
+}
+
+// numeros.find(n => n >=10 )
+
+// function buscarVerde(elemento) {
+//     return elemento === "verde";
+//  }
+
+//  function buscarNoVerde(elemento) {
+//     return elemento !== "verde";
+//  }
+
+//  const verde= elemento =>  elemento === "verde";
+
+
+
+// if (existeVerde === undefined){
+//     console.log("No existe verde");
+// }
+// console.log(existeVerde);
+clase3.js
+Mostrando clase3.js

@@ -1,0 +1,267 @@
+
+/*Comentar y descomentar según se necesite */
+
+/*FUNCIONES*/ 
+
+// //Definicion de Funciones
+function saludar() {
+    let momentoDelDia = "tarde";
+
+    if (momentoDelDia === "mañana") {
+
+        console.log("Bue día");
+
+    } else if (momentoDelDia === "tarde") {
+
+        console.log("Buenas tardes");
+
+    } else {
+
+        console.log("Buenas Noches");
+
+    }
+}
+
+function saludarSegunElMomentoDelDia(momentoDelDia) {
+
+    if (momentoDelDia === "mañana") {
+
+        console.log("Bue día");
+
+    } else if (momentoDelDia === "tarde") {
+
+        console.log("Buenas tardes");
+
+    } else {
+        console.log("Buenas Noches");
+}
+
+}
+
+// saludarSegunElMomentoDelDia("mañana");
+// saludarSegunElMomentoDelDia("tarde");
+
+
+
+
+function sumar(numero1, numero2) {
+    let resultado = numero1 + numero2;
+    return resultado;  
+}
+
+
+// console.log(resultado);
+// sumarEImprimir(33,55);
+
+function sumarEImprimir (numero1,numero2){
+    console.log(numero1+numero2);
+}
+
+// let resultadoSuma = sumar(33,55);
+// console.log(resultadoSuma);
+
+// //Function Expression
+const resta = function (numero3, numero4) {
+    resultado = numero3 - numero4;
+    return resultado;
+}
+
+// console.log(resta(44,110));
+
+// //Invocacion de las funciones
+// // let resultado;
+// // resultado = sumar(2,5);
+// // console.log(resultado);
+
+// /* Fin Funciones */
+
+/* MANEJO DE ERRORES */
+//Manejo de errores
+// function dividirEImprimir(numero1, numero2) {
+//     console.log(numero1 / numero2);
+// }
+
+// function dividirConExcepcion(numero1, numero2) {
+
+//     try {
+//         if (numero2 === 0) {
+//             throw Error("No se puede dividir por 0");
+//         }
+//         return numero1 / numero2;
+//     }
+//     catch (error) {   
+   
+//         console.error(error);
+//     }
+//     finally {
+//         console.log("Se terminó la ejecución de mi función");
+//     }
+
+// }
+
+/* fin MANEJO DE ERRORES */
+
+/* OBJETOS */
+
+let persona = {
+    nombre: "Jorge",
+    apodo: "quentin",
+    edad: 37,
+    esCasado: false,
+    saludar: function saludar (){
+        console.log("Hola a todos");
+    }
+}
+
+// //Dot notation
+// console.log(persona.nombre);
+
+// // undefined
+// console.log(persona.fechaDeNacimiento);
+
+//Array Notation
+// console.log(persona['apodo']);
+
+// // undefined
+//  console.log(persona['fechaDeNacimiento']);
+
+// Agregamos una propiedad
+//  persona.apellido = "Tarantino";
+// console.log(persona['apellido']);
+
+// Modificamos una propiedad existente
+// persona.edad = 38;
+// console.log(persona['edad']);
+
+
+// Borramos una propiedad <= Cuidado con esto usarlo solo si se sabe lo que se está haciendo
+// persona.apellido = "Tarantino";
+// console.log(persona['apellido']);
+// delete persona.apellido;
+// console.log(persona['apellido']);
+
+
+//in para ver si una propiedad existe dentro de nuestro objeto
+// console.log("apellido" in persona);
+// console.log("nombre" in persona);
+
+
+
+/* Fin OBJETOS */
+
+/*CLASES */
+
+// class SuperPersona{
+//         dni;
+//         //JS tiene su metodo constructor y se ejecuto
+// }
+
+// let superPersona = new superPersona();
+
+// function ponerTodosLoValoresPorDefault(){
+        
+// }
+// class Persona extends SuperPersona {
+//     nombre;    
+//     apellido;
+//     edad; 
+//     constructor(nombre, dni){
+//         super(dni);
+//         this.nombre = nombre;
+//         this.edad = 0;
+//     }
+
+    
+// }
+
+// class Estudiante extends Persona{
+
+//     super(nombre, dni);
+//     colegio;
+// }
+
+// const estudiante1 = new Estudiante("Jorge");
+
+//Todo vacio
+// console.log(estudiante1);
+// estudiante1.nombre = "jorge"; 
+// console.log(estudiante1);
+// console.log(estudiante1.nombre);
+
+
+
+/*Fin CLASES */
+
+/*  ARRAYS https://cajasdecorativas.mitiendanube.com/cl/productos/caja-dulces-con-separadores-y-ventana-16x24x5-centimetros-kraft/
+*/
+
+// //Constructor
+// let colores = new Array();
+
+// // // Literal
+// let frutas = [];
+
+// //                  0           1           2            
+// let verduras = ['lechuga', 'remolacha', 'hinojo'];
+// // //Acceder al indice
+// console.log(verduras[0]);
+// console.log(verduras[1]);
+// console.log(verduras[2]);
+
+// //Modificar
+//  verduras[2] = 'rúcula';
+//  console.log(verduras[2]);
+
+// //.length para saber el tamaño del array
+ //console.log(verduras.length)
+
+// //Agregar un elemento al final
+// verduras.push('zanahoria');
+// console.log(verduras);
+
+// //Agregar un elemento al principio
+// verduras.unshift('papa');
+// console.log(verduras);
+
+// //sacar un elemento del final
+// verduras.pop();
+// let ultimoElemento = verduras.pop();
+// console.log(ultimoElemento);
+
+// //sacar un elemento del principio
+// verduras.shift();
+// let primerElemento = verduras.shift();
+// console.log(primerElemento);
+
+// //Devolver el indice
+// let indiceZanahoria= verduras.indexOf('zanahoria');
+// let indiceRadicheta =verduras.indexOf('radicheta');
+// let indiceRemolacha = verduras.indexOf("remolacha");
+
+// console.log(indiceZanahoria);
+// console.log(indiceRadicheta);
+// console.log(indiceRemolacha);
+
+ verduras.push('papa');
+let hayPapa = verduras.includes('papa');
+console.log("Hay papa: " + hayPapa);
+
+
+
+// let hayCalabaza = verduras.includes('calabaza');
+// console.log("Hay calabaza: " + hayCalabaza);
+
+
+// //Recorrer un array
+// function imprimirTodosLosElementos(){
+//     console.log("Los elementos del array son: ");
+// for (let index = 0; index < verduras.length; index++) {
+//     console.log(verduras[index])
+// }
+// }
+
+// imprimirTodosLosElementos();
+
+/*Fin ARRAYS */
+clase2.js
+Mostrando clase2.js
