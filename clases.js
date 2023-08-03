@@ -151,7 +151,7 @@
     }
 
     //Callback functions 
-    // Funciones que se pasan como parametros a otras funciones
+    // Funciones que se pasan como argumento a otras funciones
 
     function finLlamado() {console.log('Terminó la ejecución');} 
 
@@ -444,4 +444,77 @@ numeros1.push(-1);
 console.log(numeros1);
 console.log(nuevoNumero1);
 
-//Promesas
+// Promesas
+
+// Manejan operaciones asincronas sin bloquear el hilo principal
+
+// Tienen 3 estados: Pending, Fulfilled, Rejected
+
+// Consumo: Then, Catch, Finally
+
+// Creacion
+
+// function puedeVotar(edad){
+//     if(edad > 18){
+//         return "puede votar";
+//     }else{
+//         throw "no puede votar";
+//     }
+// }
+
+function puedeVotar(edad){
+    return new Promise((resolve, reject) =>{  
+        setTimeout(() => {
+            if(edad > 18){
+                resolve("puede votar");
+            } else {
+                reject("no puede votar");
+            }
+        }, 100);
+    });
+}
+const puedeVotarPromesa = puedeVotar(10);
+console.log(puedeVotarPromesa)
+
+puedeVotarPromesa.then((mensaje) => {
+    console.log(mensaje);
+}) .catch((mensaje) => {
+    console.log(mensaje);
+})
+
+
+function sayHi (parameter){
+    console.log(parameter);
+}
+argument = 'Hi';
+sayHi(argument);
+
+
+// Async / Await
+
+// Await bloquea el hilo de ejecucion para esperar a terminar de ejecutar una operacion asincrona es necesario el uso de funciones Async y el uso de try catch 
+// Dado que si la operacion asincrona no se resuelve o devuelve un error debe ser atrapado por el catch
+
+function getCountriesFromAPI(error){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(error) reject("Api down, try again later...");
+            resolve(['Argentina', 'Bolivia', 'Brasil']);
+        }, 0);
+    });
+}
+
+// function main(){
+//     const countries = getCountriesFromAPI(false);
+//     console.log(countries); 
+// }
+
+async function main(){
+    try{
+        const countries = await getCountriesFromAPI(false)
+        console.log(countries);
+    } catch(err) {
+        console.log(err);
+    } finally { console.log('xd'); }
+}
+main();
